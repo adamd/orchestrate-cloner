@@ -1,0 +1,12 @@
+{
+  "name": "orchestrate_clone",
+  "version": "0.0.1",
+  "main": "index",
+  "tags": [
+    "orchestrate"
+  ],
+  "dependencies": {
+    "orchestrate": "0.0.8",
+    "assert": "~1.1.1"
+  }
+}
