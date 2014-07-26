@@ -8,7 +8,7 @@
 var assert = require('assert')
 var nock = require('nock')
 var token = 'sample_token'
-var db = require('../')(token)
+var db = require('../lib-cov/client')(token)
 
 var users = {
   steve: {

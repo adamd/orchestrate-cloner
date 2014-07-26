@@ -1,4 +1,3 @@
-orchestrate-clone
-=================
+=== ORCHESTRATE.IO Cloning from exported file ===
 
-module to sync apps-collections to another app. 
+purpose = to create dev app
