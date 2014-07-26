@@ -5,7 +5,7 @@ _Description: This module is made to create an duplication of an app on [Orchest
 ### Project Setup - To use this cli you need a couple of things.
 
 1. run:
-        `git clone git@github.com:BEZEI2K/orchestrate-clone.git; cd orchestrate-clone; npm link`
+        `npm install -g orchesrtate-clone`
 2. An account on [Orchestrate.io][].
 3. Have [node.js] installed.
 4. Have a live app
