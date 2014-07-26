@@ -1,6 +1,6 @@
-# Orchestrate Cloner (not published yet)
+# Orchestrate Cloner
 
-_Description: This module is made to create an duplication of an app on [Orchestrate.io][]
+Description: This module is made to create an duplication of an app on [Orchestrate.io][]
 
 ### Project Setup - To use this cli you need a couple of things.
 
