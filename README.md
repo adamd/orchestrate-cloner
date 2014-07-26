@@ -14,8 +14,8 @@ _Description: This module is made to create an duplication of an app on [Orchest
 7. You should have an email for your exported data.
 8. run this inside of the terminal:
       `orchesclone ofile=path/to/exported/data devkey=dev-app-api-key`
-9. Your collections and objects are created!
-10. Does not handle graphing or events yet.
+9. Your collections and objects are created along with your graphs and events!
+10. Now you have a live app and a dev app in orchestrate.
 
 
 ## Getting Credentials
