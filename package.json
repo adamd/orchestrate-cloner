@@ -1,6 +1,6 @@
 {
-  "name": "orchestrate-clone",
-  "version": "0.0.2",
+  "name": "orchestrate-cloner",
+  "version": "0.0.1",
   "description": "This is made to clone apps for a production / development app",
   "main": "index.js",
   "scripts": {
@@ -25,9 +25,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BEZEI2K/orchestrate-clone"
+    "url": "https://github.com/BEZEI2K/orchestrate-cloner"
   },
   "bugs": {
-    "url": "https://github.com/BEZEI2K/orchestrate-clone/issues"
+    "url": "https://github.com/BEZEI2K/orchestrate-cloner/issues"
   }
 }

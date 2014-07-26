@@ -5,7 +5,9 @@ _Description: This module is made to create an duplication of an app on [Orchest
 ### Project Setup - To use this cli you need a couple of things.
 
 1. run:
-        `npm install -g orchesrtate-clone`
+    <pre>
+    npm install -g orchesrtate-cloner
+    </pre>
 2. An account on [Orchestrate.io][].
 3. Have [node.js] installed.
 4. Have a live app
@@ -13,7 +15,9 @@ _Description: This module is made to create an duplication of an app on [Orchest
 6. While you wait for the email from Orchestrate watch this funny animal video of cats in water https://www.youtube.com/watch?v=TVvcdQFFYhk.
 7. You should have an email for your exported data.
 8. run this inside of the terminal:
-                                    `orchesclone ofile=path/to/exported/data devkey=dev-app-api-key`
+    <pre>
+    orchesclone ofile=path/to/exported/data devkey=dev-app-api-key
+    </pre>
 9. Your collections and objects are created along with your graphs and events!
 10. Now you have a live app and a dev app in orchestrate.
 
