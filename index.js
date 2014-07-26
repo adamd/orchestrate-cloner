@@ -55,7 +55,12 @@ async.series([
       });
     },
     function (callback){
-      loopOverArray('relationship', data, 'one', function (){
+      loopOverArray('relationship', data, 'two', function (){
+        callback(null, 'two');
+      });
+    },
+    function (callback){
+      loopOverArray('event', data, 'three', function (){
         callback(null, 'two');
       });
     }
@@ -113,6 +118,8 @@ function fetchNextPiece(obj, db){
     return db.put(obj.path.collection, obj.path.key, obj.value);
   } else if (obj.kind == "relationship"){
     return db.newGraphBuilder().create().from(obj.source.collection, obj.source.key).related(obj.relation).to(obj.destination.collection, obj.destination.key)
+  } else if (obj.kind == "event"){
+    return db.newEventBuilder().from(obj.path.collection, obj.path.key).type(obj.path.type).time(obj.path.timestamp).data(obj.value).create()
   }
 }
 
