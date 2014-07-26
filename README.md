@@ -12,7 +12,7 @@ _Description: This module is made to create an duplication of an app on [Orchest
 5. Once you have located your live app. Click the export data button.
 6. While you wait for the email from Orchestrate watch this funny animal video of cats in water https://www.youtube.com/watch?v=TVvcdQFFYhk.
 7. You should have an email for your exported data.
-8. run this inside of the folder in the terminal:
+8. run this inside of the terminal:
       `orchesclone ofile=path/to/exported/data devkey=dev-app-api-key`
 9. Your collections and objects are created!
 10. Does not handle graphing or events yet.
