@@ -6,6 +6,7 @@ var cmds = {};
 var cmdString = process.argv.join(" ");
 var fs = require("fs");
 var async = require("async");
+var lazy  = require("lazy");
 
 //double check to make sure the cmdstring has the parameters needed.
 
@@ -24,7 +25,7 @@ process.argv.forEach(function (cmd, index){
 
       //exported data from live app
 
-      cmds["liveAppData"] = orchestrateObject(cmd.split("=")[1]);
+      cmds["filePath"] = cmd.split("=")[1];
     }
 
     //check to make sure yet again devkey is a command issued,
@@ -41,30 +42,27 @@ process.argv.forEach(function (cmd, index){
 
 
 //orchestrate dev app obj;
-cmds["devApp"] = require("orchestrate")(cmds.devkey);
-
-//short variable for live app data;
-var data = cmds["liveAppData"];
-
-
+var db = require("orchestrate")(cmds.devkey);
 
 async.series([
     function (callback){
-      loopOverArray('item', data, 'one', function (){
+      loopOverArray('item', cmds.filePath, function (){
         callback(null, 'one');
       });
     },
     function (callback){
-      loopOverArray('relationship', data, 'two', function (){
+      loopOverArray('relationship', cmds.filePath, function (){
         callback(null, 'two');
       });
     },
     function (callback){
-      loopOverArray('event', data, 'three', function (){
+      loopOverArray('event', cmds.filePath, function (){
         callback(null, 'two');
       });
     }
-]);
+], function (err, results){
+  console.log("Success, file has been imported to the app containing the key" + cmds["devkey"]);
+});
 
 /**
   * loops over the array pulled from exported file
@@ -73,38 +71,23 @@ async.series([
   * @param {string} seriesPos (which index of async.series function it is)
 **/
 
-function loopOverArray (kind, array, seriesPos, callback){
-
-  var finishCount = 0;
-  var runCount = 0;
-
-  array.forEach(function (obj){
-    if(obj != ""){
-      obj = JSON.parse(obj);
-      if(obj.kind == kind){
-        finishCount++;
-      }
-    }
-  });
-
-  for(var i = 0; i < array.length; i++){
-    if(array[i] != ""){
-      var obj = JSON.parse(array[i]);
-      if(obj.kind == kind){
-        db = fetchNextPiece(obj, cmds["devApp"]);
-        db
-        .then(function (result){
-          runCount++;
-          if(runCount == finishCount){
-            callback();
+function loopOverArray (kind, pathtofile, callback){
+  var file  = fs.createReadStream(pathtofile);
+  console.log(db);
+  new lazy(file).lines
+      .forEach(function(line){
+          var obj = JSON.parse(line.toString());
+          if(obj.kind == kind){
+            wholeDB = fetchNextPiece(obj, db);
+            wholeDB.fail(function (err){
+              throw new Error(err);
+            });
           }
-        })
-        .fail(function (err){
-          throw new Error(err);
-        });
-      }
-    }
-  }
+      });
+
+  file.on('end', function() {
+    callback();
+  });
 }
 
 /**
