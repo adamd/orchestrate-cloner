@@ -73,7 +73,6 @@ async.series([
 
 function loopOverArray (kind, pathtofile, callback){
   var file  = fs.createReadStream(pathtofile);
-  console.log(db);
   new lazy(file).lines
       .forEach(function(line){
           var obj = JSON.parse(line.toString());
@@ -104,13 +103,4 @@ function fetchNextPiece(obj, db){
   } else if (obj.kind == "event"){
     return db.newEventBuilder().from(obj.path.collection, obj.path.key).type(obj.path.type).time(obj.path.timestamp).data(obj.value).create()
   }
-}
-
-/**
-  * loads file
-  * @param {string} pathToFile (exported data from live app on orchestrate)
-**/
-
-function orchestrateObject(pathToFile) {
-  return fs.readFileSync(pathToFile, {encoding: "utf8"}).split("\n");
 }
