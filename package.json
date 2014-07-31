@@ -1,6 +1,6 @@
 {
   "name": "orchestrate-cloner",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is made to clone apps for a production / development app",
   "main": "index.js",
   "scripts": {
