@@ -67,8 +67,8 @@ async.series([
 /**
   * loops over the array pulled from exported file
   * @param {string} kind (the kind of object it is)
-  * @param {array} array (array of data read from file)
-  * @param {string} seriesPos (which index of async.series function it is)
+  * @param {string} pathtofile (path to file)
+  * @param {function} callback (which index of async.series function it is)
 **/
 
 function loopOverArray (kind, pathtofile, callback){
