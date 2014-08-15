@@ -1,0 +1,4 @@
+{"kind":"item","path":{"collection":"sample-collection","key":"test","ref":"c3a198b5d5678af5"},"value":{"testing":"value"},"reftime":1408047182499}
+{"kind":"item","path":{"collection":"sample-collection","key":"test2","ref":"4c829846bd371a49"},"value":{"testing2":"value2"},"reftime":1408047618888}
+{"kind":"event","timestamp":1408047714051,"path":{"collection":"sample-collection","key":"test","type":"event","timestamp":1408047714051,"ordinal":20000,"ref":"15a9858253f078ea"},"value":{"started":"monitoring","user":"test2"},"ordinal":20000}
+{"kind":"relationship","timestamp":1408047656648,"source":{"collection":"sample-collection","key":"test"},"destination":{"collection":"sample-collection","key":"test2"},"relation":"monitor"}

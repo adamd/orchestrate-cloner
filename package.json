@@ -21,6 +21,14 @@
     "lazy": "^1.0.11",
     "orchestrate": "^0.3.0"
   },
+  "devDependencies": {
+    "coveralls": "^2.11.0",
+    "expect.js": "0.1.x",
+    "jscoverage": "^0.5.4",
+    "mocha": "*",
+    "mocha-lcov-reporter": "0.0.1",
+    "nock": "^0.34.0"
+  },
   "bin": {
     "orchesclone": "./index.js"
   },
