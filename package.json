@@ -32,6 +32,9 @@
   "bin": {
     "orchesclone": "./index.js"
   },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -u tdd"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/BEZEI2K/orchestrate-cloner"

@@ -1,6 +1,3 @@
-// since make_a_cat uses `util.print` to print stuff
-// we'll overwrite it to test its output
-
 var util = require('util')
 , assert = require("assert")
 , fs = require("fs")
