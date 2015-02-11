@@ -6,7 +6,7 @@ Description: This module is made to create an duplication of an app on [Orchestr
 
 1. run:
     <pre>
-    npm install -g orchesrtate-cloner
+    npm install -g orchestrate-cloner
     </pre>
 2. An account on [Orchestrate.io][].
 3. Have [node.js] installed.
